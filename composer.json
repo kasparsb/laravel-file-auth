@@ -1,0 +1,10 @@
+{
+    "name": "kasparsb/auth",
+    "description": "Auth",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Kasparsb\\Auth\\": "src/"
+        }
+    }
+}
