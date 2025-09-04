@@ -62,4 +62,7 @@ class TextUserProvider implements UserProvider {
     public function validateCredentials(Authenticatable $user, array $credentials) {
         return $user->getAuthPassword() == $credentials['password'];
     }
+
+    public function rehashPasswordIfRequired(Authenticatable $user, #[\SensitiveParameter] array $credentials, bool $force = false) {
+    }
 }
