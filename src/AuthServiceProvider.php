@@ -21,20 +21,12 @@ class AuthServiceProvider extends ServiceProvider
             __DIR__.'/config/fileauth.php' => config_path('fileauth.php'),
         ]);
 
-        //$this->loadMigrationsFrom(__DIR__.'/database/migrations');
-
-        // if ($this->app->runningInConsole()) {
-        //     $this->commands([
-        //         CreateFileFromUrlCommand::class,
-        //     ]);
-        // }
-
         $this->loadViewsFrom(__DIR__.'/resources/views', 'auth');
 
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 
         Auth::provider('text', function ($app, array $config) {
-            // Return an instance of Illuminate\Contracts\Auth\UserProvider...
+            // Must return instance of Illuminate\Contracts\Auth\UserProvider
             return new TextUserProvider();
         });
     }

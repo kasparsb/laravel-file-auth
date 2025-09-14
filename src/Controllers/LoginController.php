@@ -35,7 +35,7 @@ class LoginController extends Controller
         //$this->incrementLoginAttempts($request);
 
         //return $this->sendFailedLoginResponse($request);
-        return redirect(route('auth::login'));
+        return redirect(route('login'));
     }
 
     public function logout(Request $request) {

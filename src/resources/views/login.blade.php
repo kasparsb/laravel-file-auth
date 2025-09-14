@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <form method="post" action="{{ route('auth::login') }}" style="max-width: 300px;margin:40px auto 0">
+    <form method="post" action="{{ route('login') }}" style="max-width: 300px;margin:40px auto 0">
 
     <div>
         <label style="display:block">E-mail</label>
