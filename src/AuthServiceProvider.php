@@ -4,8 +4,12 @@ namespace Kasparsb\Auth;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\Console\AboutCommand;
 
 use Kasparsb\Auth\TextUserProvider;
+use Kasparsb\Auth\Console\Commands\ListUsersCommand;
+use Kasparsb\Auth\Console\Commands\CreateUserCommand;
+use Kasparsb\Auth\Console\Commands\DeleteUserCommand;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -29,5 +33,23 @@ class AuthServiceProvider extends ServiceProvider
             // Must return instance of Illuminate\Contracts\Auth\UserProvider
             return new TextUserProvider();
         });
+
+
+        /**
+         * Kaut kāds info par package, ko izvadīs Laravel about cli komanda
+         */
+        AboutCommand::add('File auth', fn () => [
+            'Users file' => config('fileauth.filename'),
+            'Users file disk' => config('fileauth.disk'),
+            'Version' => '1.0.3',
+        ]);
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                ListUsersCommand::class,
+                CreateUserCommand::class,
+                DeleteUserCommand::class,
+            ]);
+        }
     }
 }
