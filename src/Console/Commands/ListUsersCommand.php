@@ -18,6 +18,9 @@ class ListUsersCommand extends Command
             $disk->get(config('fileauth.filename')),
             true
         );
+        if (!is_array($users)) {
+            $users = [];
+        }
 
         dump($users);
     }

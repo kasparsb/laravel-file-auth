@@ -18,6 +18,9 @@ class DeleteUserCommand extends Command
             $disk->get(config('fileauth.filename')),
             true
         );
+        if (!is_array($users)) {
+            $users = [];
+        }
 
         $newUserEmail = $this->argument('email');
 
