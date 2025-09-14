@@ -23,10 +23,7 @@ class LoginController extends Controller
         if ($this->attemptLogin($request)) {
             $request->session()->regenerate();
 
-            return redirect(data_get(Auth::guard()->user(), 'homeRoute'));
-
-            // return $this->authenticated($request, $this->guard()->user())
-            //     ?: redirect()->intended($this->redirectPath());
+            return redirect()->intended(data_get(Auth::guard()->user(), 'homeRoute'));
         }
 
         // If the login attempt was unsuccessful we will increment the number of attempts
@@ -35,6 +32,8 @@ class LoginController extends Controller
         //$this->incrementLoginAttempts($request);
 
         //return $this->sendFailedLoginResponse($request);
+
+        $request->session()->flash('errors', collect(['Wrong user name or password']));
         return redirect(route('login'));
     }
 
