@@ -31,8 +31,6 @@ class DeleteUserCommand extends Command
 
         unset($users[$newUserEmail]);
 
-        $users = array_values($users);
-
         $disk->put(config('fileauth.filename'), json_encode($users));
 
         $this->info('User deleted');
