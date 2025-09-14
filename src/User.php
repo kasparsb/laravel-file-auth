@@ -19,6 +19,9 @@ class User implements Authenticatable {
     public function getAuthIdentifier() {
         return $this->email;
     }
+    public function getAuthPasswordName() {
+        return 'password';
+    }
     public function getAuthPassword() {
         return $this->password;
     }
