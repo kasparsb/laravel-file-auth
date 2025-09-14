@@ -15,7 +15,7 @@ Route::group([
      */
     'middleware' => ['web'],
 ], function(){
-    Route::get('login', 'index')->name('auth::login');
+    Route::get('login', 'index')->name('login');
     Route::post('login', 'login');
-    Route::get('logout', 'logout')->name('auth::logout');
+    Route::get('logout', 'logout')->name('logout');
 });
