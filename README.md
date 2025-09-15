@@ -1,7 +1,7 @@
 # Authenticate users from text file
 Users are stored in json text file in app storage directory
 
-### configuration
+## Configuration
 File auth package publishes configuration file **config/fileauth.php**
 
 In your **.env** config edit these parameters
@@ -10,7 +10,7 @@ In your **.env** config edit these parameters
 
 **FILEAUTH_USERS_FILENAME** - users file name. Defaults to fileauth-users.json
 
-# Setup
+## Setup
 
 Publish configuration file
 ```bash
@@ -46,12 +46,12 @@ Route::group([
 });
 ```
 
-# Login routes
+## Login routes
 Package defines named login/logout routes
 - login /auth/login
 - logout /auth/logout
 
-# CLI commands
+## CLI commands
 
 List users
 ```bash
