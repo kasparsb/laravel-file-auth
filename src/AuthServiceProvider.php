@@ -29,7 +29,7 @@ class AuthServiceProvider extends ServiceProvider
 
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 
-        Auth::provider('text', function ($app, array $config) {
+        Auth::provider('fileauth', function ($app, array $config) {
             // Must return instance of Illuminate\Contracts\Auth\UserProvider
             return new TextUserProvider();
         });
@@ -41,7 +41,7 @@ class AuthServiceProvider extends ServiceProvider
         AboutCommand::add('File auth', fn () => [
             'Users file' => config('fileauth.filename'),
             'Users file disk' => config('fileauth.disk'),
-            'Version' => '1.0.3',
+            'Version' => '1.0.6',
         ]);
 
         if ($this->app->runningInConsole()) {

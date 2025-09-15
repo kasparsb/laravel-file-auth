@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ListUsersCommand extends Command
 {
-    protected $signature = 'file-auth:list-users';
+    protected $signature = 'fileauth:list-users';
     protected $description = 'List all users';
 
     public function handle()

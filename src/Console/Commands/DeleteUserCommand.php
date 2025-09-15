@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class DeleteUserCommand extends Command
 {
-    protected $signature = 'file-auth:delete-user {email}';
+    protected $signature = 'fileauth:delete-user {email}';
     protected $description = 'Delete user';
 
     public function handle()

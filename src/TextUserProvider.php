@@ -64,5 +64,6 @@ class TextUserProvider implements UserProvider {
     }
 
     public function rehashPasswordIfRequired(Authenticatable $user, #[\SensitiveParameter] array $credentials, bool $force = false) {
+
     }
 }

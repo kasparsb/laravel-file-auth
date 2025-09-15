@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class CreateUserCommand extends Command
 {
-    protected $signature = 'file-auth:create-user {email}';
+    protected $signature = 'fileauth:create-user {email}';
     protected $description = 'Create user';
 
     public function handle()

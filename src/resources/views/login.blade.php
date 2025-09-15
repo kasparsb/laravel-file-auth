@@ -22,7 +22,7 @@
 
     @if (isset($errors))
     @foreach ($errors->all() as $message)
-    <div style="margin-top:24px;padding:12px;background:#ff4141;color:#fff;border-radius:4px">{{ str_replace('auth.failed', 'Wrong email or password!', $message) }}</div>
+    <div style="margin-top:24px;padding:12px;background:#ff4141;color:#fff;border-radius:4px">{{ $message }}</div>
     @endforeach
     @endif
 
