@@ -25,7 +25,7 @@ class AuthServiceProvider extends ServiceProvider
             __DIR__.'/config/fileauth.php' => config_path('fileauth.php'),
         ]);
 
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'auth');
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'fileauth');
 
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 

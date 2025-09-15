@@ -13,7 +13,7 @@ class LoginController extends Controller
     use AuthorizesRequests, ValidatesRequests;
 
     public function index() {
-        return view('auth::login');
+        return view('fileauth::login');
     }
 
     public function login(Request $request) {
