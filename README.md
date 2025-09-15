@@ -17,6 +17,8 @@ In your **.env** config edit these parameters
 
 **FILEAUTH_PUBLISH_ROUTES** - publish login/logout routes. Defaults to yes. You can disable this to load your own login/logout routes
 
+**FILE_AUTH_LOGIN_VIEW_NAME** - name of the view for login page. Override it to use your own login page view
+
 ## Setup
 
 Publish configuration file

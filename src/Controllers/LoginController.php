@@ -5,6 +5,7 @@ namespace Kasparsb\Auth\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
@@ -13,7 +14,11 @@ class LoginController extends Controller
     use AuthorizesRequests, ValidatesRequests;
 
     public function index() {
-        return view('fileauth::login');
+        $viewName = 'fileauth::login';
+        if (config()->has('fileauth.login_view_name')) {
+            $viewName = config('fileauth.login_view_name');
+        }
+        return view($viewName);
     }
 
     public function login(Request $request) {
