@@ -2,7 +2,9 @@
 Users are stored in json text file in app storage directory
 
 ### configuration
+
 **FILEAUTH_DISK** - disk name where users file will be stored. Defaults to local
+
 **FILEAUTH_USERS_FILENAME** - users file name. Defaults to fileauth-users.json
 
 # Setup
