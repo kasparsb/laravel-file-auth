@@ -1,5 +1,9 @@
 # Authenticate users from text file
-Users are stored in json text file in app storage directory
+Users are stored in json text file in app storage directory. No need for database and DB table. You control your users but do not polute database with users table
+
+Users are identified by email not ID
+
+Users file can be easily shared between servers
 
 ## Configuration
 File auth package publishes configuration file **config/fileauth.php**
