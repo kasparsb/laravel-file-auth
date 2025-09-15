@@ -2,12 +2,21 @@
 Users are stored in json text file in app storage directory
 
 ### configuration
+File auth package publishes configuration file **config/fileauth.php**
+
+In your **.env** config edit these parameters
 
 **FILEAUTH_DISK** - disk name where users file will be stored. Defaults to local
 
 **FILEAUTH_USERS_FILENAME** - users file name. Defaults to fileauth-users.json
 
 # Setup
+
+Publish configuration file
+```bash
+php artisan vendor:publish --provider="Kasparsb\Auth\AuthServiceProvider"
+```
+
 Add **File auth** provider to boostrap/providers file
 
 ```php
