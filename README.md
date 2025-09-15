@@ -6,6 +6,7 @@ Users are identified by email not ID
 Users file can be easily shared between servers
 
 ## Configuration
+
 File auth package publishes configuration file **config/fileauth.php**
 
 In your **.env** config edit these parameters
@@ -29,7 +30,7 @@ Add **File auth** provider to boostrap/providers file
 ]
 ```
 
-Configure auth to user fileauth as users provider
+Configure auth to use File auth as users provider
 File *config/auth.php*
 
 ```php
@@ -40,9 +41,8 @@ File *config/auth.php*
 ]
 ```
 
-Configure routes to use Laravel default auth middleware
+Configure your protected routes to use Laravel default **auth** middleware
 ```php
-
 Route::group([
     'middleware' => 'auth',
 ], function(){
@@ -51,7 +51,8 @@ Route::group([
 ```
 
 ## Login routes
-Package defines named login/logout routes
+
+Package defines named routes like this
 - login /auth/login
 - logout /auth/logout
 
