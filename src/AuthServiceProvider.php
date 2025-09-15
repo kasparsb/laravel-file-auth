@@ -41,7 +41,7 @@ class AuthServiceProvider extends ServiceProvider
         AboutCommand::add('File auth', fn () => [
             'Users file' => config('fileauth.filename'),
             'Users file disk' => config('fileauth.disk'),
-            'Version' => '1.0.6',
+            'Version' => '1.0.8',
         ]);
 
         if ($this->app->runningInConsole()) {
