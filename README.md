@@ -15,11 +15,13 @@ In your **.env** config edit these parameters
 
 **FILEAUTH_USERS_FILENAME** - users file name. Defaults to fileauth-users.json
 
+**FILEAUTH_PUBLISH_ROUTES** - publish login/logout routes. Defaults to yes. You can disable this to load your own login/logout routes
+
 ## Setup
 
 Publish configuration file
 ```bash
-php artisan vendor:publish --provider="Kasparsb\Auth\AuthServiceProvider"
+php artisan vendor:publish --provider="Kasparsb\Auth\AuthServiceProvider" --force
 ```
 
 Add **File auth** provider to boostrap/providers file

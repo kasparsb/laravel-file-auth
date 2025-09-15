@@ -27,13 +27,23 @@ class AuthServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/resources/views', 'fileauth');
 
-        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+        /**
+         * Tikai, ja ir pieejams config fileauth.publish_routes tikai, tad to ņemam vērā
+         * pretējā gadījumā vienmēr load login routes
+         */
+        $loadRoutes = true;
+        if (config()->has('fileauth.publish_routes')) {
+            $loadRoutes = config('fileauth.publish_routes');
+        }
+
+        if ($loadRoutes) {
+            $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+        }
 
         Auth::provider('fileauth', function ($app, array $config) {
             // Must return instance of Illuminate\Contracts\Auth\UserProvider
             return new TextUserProvider();
         });
-
 
         /**
          * Kaut kāds info par package, ko izvadīs Laravel about cli komanda
